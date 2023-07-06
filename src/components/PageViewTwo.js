@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { monthly, yearly } from "../reducers/subcriptionPlanSlice";
-import { personSubcription } from "../reducers/personInfoSlice";
+import { personSubcription, personInfo } from "../reducers/personInfoSlice";
 import iconArcade from "../assets/images/icon-arcade.svg";
 import iconAdvaced from "../assets/images/icon-advanced.svg";
 import iconPro from "../assets/images/icon-pro.svg";
@@ -16,6 +16,7 @@ const PageViewTwo = () => {
   useEffect(() => {
     document.getElementById("li-1").classList.remove("li-style-active");
     document.getElementById("li-2").classList.add("li-style-active");
+    document.getElementById("li-3").classList.remove("li-style-active");
 
     document.getElementById("yearly").classList.remove("button-active");
     document.getElementById("monthly").classList.remove("button-active");
@@ -29,8 +30,22 @@ const PageViewTwo = () => {
       document.getElementById("monthly-label").classList.add("period-label");
     }
 
-    document.getElementById(person.subcription.plan).focus();
+    document
+      .getElementById(person.subcription.plan)
+      .classList.add("page-view-two-button-active");
   }, []);
+
+  useEffect(() => {
+    subcription.subcription.map((s) => {
+      return document
+        .getElementById(s.plan)
+        .classList.remove("page-view-two-button-active");
+    });
+
+    document
+      .getElementById(person.subcription.plan)
+      .classList.add("page-view-two-button-active");
+  }, [subcription, person.subcription]);
 
   const handleMonthlyPeriod = (e) => {
     e.preventDefault();
@@ -41,6 +56,7 @@ const PageViewTwo = () => {
     document.getElementById("yearly-label").classList.add("period-label");
 
     dispatch(monthly());
+    dispatch(personInfo());
   };
 
   const handleYearlyPeriod = (e) => {
@@ -52,6 +68,7 @@ const PageViewTwo = () => {
     document.getElementById("monthly-label").classList.add("period-label");
 
     dispatch(yearly());
+    dispatch(personInfo());
   };
 
   const handleSubcription = (e, p) => {
@@ -68,6 +85,7 @@ const PageViewTwo = () => {
       <div className="page-view-two-div">
         {subcription.subcription.map((p, index) => (
           <button
+            className="page-view-two-button"
             key={index}
             id={p.plan}
             onClick={(e) => handleSubcription(e, p)}

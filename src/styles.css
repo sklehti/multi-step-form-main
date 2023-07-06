@@ -42,7 +42,8 @@ input:placeholder-shown {
 }
 
 .page-view-one-div,
-.page-view-two-div {
+.page-view-two-div,
+.page-view-three-div {
   padding: 7px 0;
 }
 
@@ -70,7 +71,8 @@ input:placeholder-shown {
   background-color: hsl(206, 94%, 87%);
 }
 
-.page-view-two-div button {
+.page-view-two-button,
+.page-view-three-box {
   box-sizing: border-box;
   width: 100%;
   padding: 13px 0 13px 10px;
@@ -84,23 +86,161 @@ input:placeholder-shown {
   cursor: pointer;
   display: flex;
   flex-direction: row;
+  text-align: start;
 }
 
-.page-view-two-div button:focus {
+.page-view-three-box {
+  display: flex;
+  justify-content: space-between;
+  cursor: auto;
+}
+
+.page-view-four-box {
+  border: none;
+  margin: 0px;
+  border-radius: 0px;
+  display: flex;
+  justify-content: space-between;
+  cursor: auto;
+  padding: 0;
+  margin: 10px 0;
+}
+
+.page-view-two-button-active {
   background-color: hsl(217, 100%, 97%);
   border: 1px solid hsl(213, 96%, 18%);
 }
 
-.page-view-two-price {
-  font-size: 14px;
-  font-weight: 400;
+.page-view-two-price,
+.page-view-three-text {
+  font-size: 12px;
+  font-weight: 300;
   color: hsl(231, 11%, 63%);
   margin-left: 0px;
   text-align: left;
+  line-height: 150%;
+}
+
+.page-view-three-price {
+  margin-right: 20px;
+  margin-top: 10px;
+  font-size: 12px;
+  font-weight: 400;
+  color: hsl(243, 100%, 62%);
+}
+
+#change-button {
+  background-color: hsl(240, 14%, 95%);
+  border: none;
+  padding-top: 5px;
+  color: hsl(231, 11%, 63%);
+  text-decoration: underline;
+}
+
+.page-view-four-style {
+  background-color: hsl(240, 14%, 95%);
+  border-radius: 10px;
+  padding: 15px 15px 10px 15px;
+}
+
+.page-view-four-main-price {
+  margin-top: 12px;
+}
+
+.page-view-four-addons,
+.page-view-four-addons-price {
+  font-size: 14px;
+  font-weight: 400;
+  color: hsl(231, 11%, 63%);
+}
+
+.page-view-four-addons-price {
+  color: hsl(213, 96%, 18%);
+}
+
+hr {
+  margin: 0px;
+  color: hsl(229, 24%, 87%);
+  border-top: 0;
+  margin: 10px 0 15px 0;
+}
+
+.total-box-style {
+  padding: 15px;
 }
 
 .page-view-two-div img {
   margin-right: 10px;
+}
+
+/* The checkbox container */
+.container {
+  display: block;
+  position: relative;
+  padding-left: 40px;
+  cursor: pointer;
+  font-size: 16px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-weight: 700;
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 7px;
+  left: 6px;
+  height: 18px;
+  width: 18px;
+  border: 1px solid hsl(229, 24%, 87%);
+  border-radius: 5px;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #eee;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: hsl(243, 100%, 62%);
+  border: 1px solid hsl(243, 100%, 62%);
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  left: 5px;
+  top: 3px;
+  width: 5px;
+  height: 7px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 
 .payment-period,
@@ -170,6 +310,16 @@ input:placeholder-shown {
   background-color: hsl(231, 100%, 99%);
   border: none;
   cursor: pointer;
+}
+
+.page-view-five-title {
+  text-align: center;
+}
+
+.thank-you-icon {
+  width: 55px;
+  height: auto;
+  padding: 50px 0 15px 0;
 }
 
 @media only screen and (max-width: 600px) {

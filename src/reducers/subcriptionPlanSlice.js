@@ -6,8 +6,13 @@ export const subcriptionPlanSlice = createSlice({
     value: {
       subcription: [
         { plan: "Arcade", price: "$9/mo" },
-        { plan: "Advaced", price: "$12/mo" },
+        { plan: "Advanced", price: "$12/mo" },
         { plan: "Pro", price: "$15/mo" },
+      ],
+      addOnsPrice: [
+        { price: "+$1/mo" },
+        { price: "+$2/mo" },
+        { price: "+$2/mo" },
       ],
       period: "monthly",
     },
@@ -17,8 +22,13 @@ export const subcriptionPlanSlice = createSlice({
       state.value = {
         subcription: [
           { plan: "Arcade", price: "$9/mo" },
-          { plan: "Advaced", price: "$12/mo" },
+          { plan: "Advanced", price: "$12/mo" },
           { plan: "Pro", price: "$15/mo" },
+        ],
+        addOnsPrice: [
+          { price: "+$1/mo" },
+          { price: "+$2/mo" },
+          { price: "+$2/mo" },
         ],
         period: "monthly",
       };
@@ -27,8 +37,13 @@ export const subcriptionPlanSlice = createSlice({
       state.value = {
         subcription: [
           { plan: "Arcade", price: "$90/yr" },
-          { plan: "Advaced", price: "$120/yr" },
+          { plan: "Advanced", price: "$120/yr" },
           { plan: "Pro", price: "$150/yr" },
+        ],
+        addOnsPrice: [
+          { price: "+$10/yr" },
+          { price: "+$20/yr" },
+          { price: "+$20/yr" },
         ],
         period: "yearly",
       };

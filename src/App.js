@@ -6,6 +6,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { increment, decrement } from "./reducers/pageNumberSlice";
 import PageViewTwo from "./components/PageViewTwo";
 import PageViewThree from "./components/PageViewThree";
+import PageViewFour from "./components/PageViewFour";
+import PageViewFive from "./components/PageViewFive";
 
 function App() {
   const dispatch = useDispatch();
@@ -16,7 +18,6 @@ function App() {
     e.preventDefault();
 
     dispatch(decrement());
-    console.log(person, " laskee ", pageNumber);
   };
 
   const handleView = (e) => {
@@ -25,18 +26,15 @@ function App() {
     switch (pageNumber) {
       case 1:
         dispatch(increment());
-        console.log(person, " nousee ", pageNumber);
         break;
       case 2:
         dispatch(increment());
-        console.log("sivu 2", pageNumber);
         break;
       case 3:
         dispatch(increment());
-        console.log("Sivu 3", pageNumber);
         break;
       case 4:
-        console.log("Sivu 4");
+        dispatch(increment());
         break;
       default:
         throw new Error("Something went wrong.");
@@ -85,11 +83,15 @@ function App() {
                 <PageViewTwo />
               ) : Number(pageNumber) === 3 ? (
                 <PageViewThree />
+              ) : Number(pageNumber) === 4 ? (
+                <PageViewFour />
+              ) : Number(pageNumber) === 5 ? (
+                <PageViewFive />
               ) : (
                 <></>
               )}
             </div>
-            <div className="footer">
+            <div id="footer" className="footer">
               {pageNumber > 1 ? (
                 <button className="back-button" onClick={handleGoBack}>
                   Go Back
@@ -97,14 +99,20 @@ function App() {
               ) : (
                 <></>
               )}
-
-              <button
-                className="main-button"
-                type="submit"
-                onClick={handleView}
-              >
-                Next Step
-              </button>
+              {pageNumber !== 4 ? (
+                <button className="main-button" onClick={handleView}>
+                  Next Step
+                </button>
+              ) : (
+                <button
+                  className="main-button"
+                  style={{ backgroundColor: "hsl(243, 100%, 62%)" }}
+                  type="submit"
+                  onClick={handleView}
+                >
+                  Confirm
+                </button>
+              )}
             </div>
           </div>
         </form>
@@ -114,44 +122,3 @@ function App() {
 }
 
 export default App;
-
-// TODO: all text here!!
-// <!-- Sidebar start -->
-
-//     Step 1 Your info Step 2 Select plan Step 3 Add-ons Step 4 Summary
-
-//     <!-- Sidebar end -->
-
-//     <!-- Step 2 start -->
-
-//      Arcade
-//     $9/mo Advanced $12/mo Pro $15/mo Monthly Yearly Go Back Next Step
-
-//     <!-- Step 2 end -->
-
-//     <!-- Step 3 start -->
-
-//      Online service
-//     Access to multiplayer games +$1/mo Larger storage Extra 1TB of cloud save
-//     +$2/mo Customizable Profile Custom theme on your profile +$2/mo Go Back Next
-//     Step
-
-//     <!-- Step 3 end -->
-
-//     <!-- Step 4 start -->
-
-//     Finishing up Double-check everything looks OK before confirming.
-
-//     <!-- Dynamically add subscription and add-on selections here -->
-
-//     Total (per month/year) Go Back Confirm
-
-//     <!-- Step 4 end -->
-
-//     <!-- Step 5 start -->
-
-//     Thank you! Thanks for confirming your subscription! We hope you have fun
-//     using our platform. If you ever need support, please feel free to email us
-//     at support@loremgaming.com.
-
-//     <!-- Step 5 end -->

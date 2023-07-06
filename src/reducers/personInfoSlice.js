@@ -11,6 +11,7 @@ export const personInfoSlice = createSlice({
         plan: "Arcade",
         price: "$8/mo",
       },
+      addOns: [],
     },
   },
   reducers: {
@@ -26,9 +27,30 @@ export const personInfoSlice = createSlice({
     personSubcription: (state, action) => {
       state.value.subcription = action.payload;
     },
+    addOns: (state, action) => {
+      state.value.addOns.push(action.payload);
+    },
+    removeAddOns: (state, action) => {
+      if (action.payload) {
+        const newArray = action.payload.personinfo.addOns.filter((f) => {
+          return f.addOnsName !== action.payload.addOnsName;
+        });
+
+        state.value.addOns = newArray;
+      }
+    },
 
     personInfo: (state, action) => {
-      state.value = state;
+      state.value = {
+        name: state.value.name,
+        email: state.value.email,
+        phone: state.value.phone,
+        subcription: {
+          plan: "Arcade",
+          price: "$8/mo",
+        },
+        addOns: [],
+      };
     },
   },
 });
@@ -39,6 +61,8 @@ export const {
   personPhone,
   personInfo,
   personSubcription,
+  addOns,
+  removeAddOns,
 } = personInfoSlice.actions;
 
 export default personInfoSlice.reducer;
