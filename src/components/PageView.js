@@ -1,12 +1,12 @@
-import bgSidebarMobile from "./assets/images/bg-sidebar-mobile.svg";
-import bgSidebarDesktop from "./assets/images/bg-sidebar-desktop.svg";
-import PageViewOne from "./components/PageViewOne";
+import bgSidebarMobile from "../assets/images/bg-sidebar-mobile.svg";
+import bgSidebarDesktop from "../assets/images/bg-sidebar-desktop.svg";
+import PageViewOne from "./PageViewOne";
 import { useSelector, useDispatch } from "react-redux";
-import { increment, decrement } from "./reducers/pageNumberSlice";
-import PageViewTwo from "./components/PageViewTwo";
-import PageViewThree from "./components/PageViewThree";
-import PageViewFour from "./components/PageViewFour";
-import PageViewFive from "./components/PageViewFive";
+import { increment, decrement } from "../reducers/pageNumberSlice";
+import PageViewTwo from "./PageViewTwo";
+import PageViewThree from "./PageViewThree";
+import PageViewFour from "./PageViewFour";
+import PageViewFive from "./PageViewFive";
 
 function PageView() {
   const dispatch = useDispatch();
