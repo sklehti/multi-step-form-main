@@ -97,6 +97,17 @@ const PageViewTwo = () => {
               <div className="page-view-two-title">
                 {p.plan}
                 <div className="page-view-two-price">{p.price}</div>
+
+                {subcription.period === "yearly" ? (
+                  <div
+                    className="page-view-two-price"
+                    style={{ color: "hsl(213, 96%, 18%)", fontSize: "11px" }}
+                  >
+                    2 months free
+                  </div>
+                ) : (
+                  <></>
+                )}
               </div>
             </button>
           ))}
