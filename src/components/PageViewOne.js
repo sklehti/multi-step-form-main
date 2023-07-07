@@ -21,9 +21,19 @@ const PageViewOne = () => {
       <p>Please provide your name, email address, and phone number.</p>
       <div className="page-view-one-div">
         <div className="label-div">
-          <label>Name</label>
+          <label>
+            <div>Name</div>
+            <div
+              id="name-field-error"
+              className="input-title-error error-style-invisible"
+            >
+              Fill in this field
+            </div>
+          </label>
         </div>
         <input
+          id="name-field"
+          className="page-view-one-input-style"
           type="text"
           name="name"
           placeholder="e.g. Stephen King"
@@ -34,9 +44,19 @@ const PageViewOne = () => {
 
       <div className="page-view-one-div">
         <div className="label-div">
-          <label>Email Address</label>
+          <label>
+            <div>Email Address</div>
+            <div
+              id="email-field-error"
+              className="input-title-error error-style-invisible"
+            >
+              Fill in this field (example@mail.com)
+            </div>
+          </label>
         </div>
         <input
+          id="email-field"
+          className="page-view-one-input-style input-field-error"
           type="text"
           name="email"
           placeholder="e.g. stephenking@lorem.com"
@@ -47,9 +67,19 @@ const PageViewOne = () => {
 
       <div className="page-view-one-div">
         <div className="label-div">
-          <label>Phone Number</label>
+          <label>
+            <div>Phone Number</div>
+            <div
+              id="phone-field-error"
+              className="input-title-error error-style-invisible"
+            >
+              Fill in this field (10 digits)
+            </div>
+          </label>
         </div>
         <input
+          id="phone-field"
+          className="page-view-one-input-style input-field-error"
           type="text"
           name="phone"
           placeholder="e.g. +1 234 567 890"
