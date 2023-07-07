@@ -3,7 +3,7 @@ body {
   margin: 0px;
   background: hsl(217, 100%, 97%);
   font-family: "Ubuntu", sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
 }
 
@@ -58,7 +58,7 @@ input:placeholder-shown {
 }
 
 .li-style {
-  padding: 9px 12px;
+  padding: 7px 12px;
   margin: 10px;
   color: hsl(0, 0%, 100%);
   border: 1px solid hsl(0, 0%, 100%);
@@ -294,7 +294,7 @@ hr {
   background-color: hsl(213, 96%, 18%);
   color: hsl(0, 0%, 100%);
   border: none;
-  border-radius: 3px;
+  border-radius: 5px;
   padding: 10px 15px;
   cursor: pointer;
 }
@@ -312,6 +312,10 @@ hr {
   cursor: pointer;
 }
 
+.page-view-five {
+  text-align: center;
+}
+
 .page-view-five-title {
   text-align: center;
 }
@@ -322,7 +326,7 @@ hr {
   padding: 50px 0 15px 0;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 700px) {
   .bg-sidebar-desktop {
     display: none;
   }
@@ -342,16 +346,22 @@ hr {
     background-color: hsl(231, 100%, 99%);
     border-radius: 10px;
     padding: 25px;
+    margin-bottom: 30px;
     box-shadow: 0px 15px 10px -10px hsl(218, 84%, 93%);
-    text-align: center; /* check if this is needed? */
   }
+
   .li-style {
     display: inline;
     list-style-type: none;
   }
 
+  .desktop-ul {
+    display: none;
+  }
+
   .footer {
     background: hsl(231, 100%, 99%);
+    position: fixed;
     position: absolute;
     width: 100%;
     bottom: 0px;
@@ -367,7 +377,20 @@ hr {
   }
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 700px) {
+  .desktop-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: #fff;
+    width: 70vw;
+    height: fit-content;
+    min-width: 600px;
+    max-width: 1000px;
+  }
+
   .desktop-view {
     display: flex;
     flex-direction: row;
@@ -377,8 +400,78 @@ hr {
     display: none;
   }
 
+  .bg-sidebar-desktop {
+    width: 95%;
+    height: auto;
+  }
+
+  .li-style {
+    list-style-type: none;
+    margin: 25px;
+  }
+
+  .li-style-desktop {
+    border: none;
+    text-align: left;
+    padding-bottom: 3px;
+    padding-top: 3px;
+  }
+
+  .li-desktop-title {
+    color: hsl(229, 24%, 87%);
+    font-weight: 300;
+  }
+
+  .desktop-ul {
+    left: 60px;
+    font-size: 12px;
+  }
+
   .view-steps ul {
     position: absolute;
     top: 0px;
+    padding-top: 50px;
+  }
+
+  .form-view {
+    display: flex;
+    align-items: center;
+    margin: auto;
+    width: 50%;
+  }
+
+  form {
+    padding: 30px;
+    width: 100%;
+    height: auto;
+  }
+
+  .main-button {
+    float: right;
+    margin-top: 10%;
+  }
+
+  .back-button {
+    margin-left: 0px;
+    margin-top: 12%;
+  }
+
+  .page-view-two-desktop {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .page-view-two-title {
+    margin-right: 10px;
+  }
+
+  .page-view-two-button {
+    display: flex;
+    flex-direction: column;
+    margin: 0 5px;
+  }
+
+  .icon-desktop-style {
+    margin-bottom: 15px;
   }
 }

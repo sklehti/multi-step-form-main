@@ -11,7 +11,7 @@ const PageViewFive = () => {
   });
 
   return (
-    <div>
+    <div className="page-view-five">
       <img className="thank-you-icon" src={iconThankYou} alt="thank you icon" />
       <h2 className="page-view-five-title">Thank you!</h2>
       <p>

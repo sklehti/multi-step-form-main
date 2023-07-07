@@ -83,22 +83,24 @@ const PageViewTwo = () => {
       <p>You have the option of monthly or yearly billing.</p>
 
       <div className="page-view-two-div">
-        {subcription.subcription.map((p, index) => (
-          <button
-            className="page-view-two-button"
-            key={index}
-            id={p.plan}
-            onClick={(e) => handleSubcription(e, p)}
-          >
-            <div>
-              <img src={icons[index]} alt="pro" />
-            </div>
-            <div>
-              {p.plan}
-              <div className="page-view-two-price">{p.price}</div>
-            </div>
-          </button>
-        ))}
+        <div className="page-view-two-desktop">
+          {subcription.subcription.map((p, index) => (
+            <button
+              className="page-view-two-button"
+              key={index}
+              id={p.plan}
+              onClick={(e) => handleSubcription(e, p)}
+            >
+              <div className="icon-desktop-style">
+                <img src={icons[index]} alt="pro" />
+              </div>
+              <div className="page-view-two-title">
+                {p.plan}
+                <div className="page-view-two-price">{p.price}</div>
+              </div>
+            </button>
+          ))}
+        </div>
 
         <div className="payment-period">
           <div id="monthly-label">Monthly</div>
