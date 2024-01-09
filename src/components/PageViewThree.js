@@ -16,6 +16,7 @@ const PageViewThree = () => {
   }, []);
 
   useEffect(() => {
+    // eslint-disable-next-line array-callback-return
     person.addOns.map((p) => {
       if (p.addOnsName.includes("Customizable profile")) {
         document.getElementById("customizable-profile-checkbox").checked = true;
@@ -38,6 +39,7 @@ const PageViewThree = () => {
           .classList.add("page-view-two-button-active");
       }
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleService = (e) => {

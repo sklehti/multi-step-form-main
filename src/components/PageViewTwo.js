@@ -33,6 +33,7 @@ const PageViewTwo = () => {
     document
       .getElementById(person.subcription.plan)
       .classList.add("page-view-two-button-active");
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {

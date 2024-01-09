@@ -34,3 +34,9 @@ Mobile view:
 Desktop view:
 
 ![Desktop view](./src/assets/images/desktop-view.png)
+
+# To run locally
+
+- npm install
+- npm start
+- Open the app on http://localhost:3000

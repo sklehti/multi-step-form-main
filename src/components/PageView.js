@@ -25,7 +25,7 @@ function PageView() {
     switch (pageNumber) {
       case 1:
         console.log(person);
-        let mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        let mailformat = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
         let phoneno =
           /^\+?([0-9]{1})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{3})?[-. ]?([0-9]{3})$/;
 
